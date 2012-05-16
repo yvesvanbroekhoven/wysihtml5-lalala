@@ -1,0 +1,51 @@
+@import "compass";
+
+$yellow: rgba(255,204,100, 1);
+$font_family: "Helvetica", "Arial", "sans-serif";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  background-image: url('http://mrhenry.be/vendor/lalala/images/backgrounds/bg-pattern.jpg');
+}
+
+#wrapper {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+}
+
+textarea {
+  width: 500px;
+  height: 300px;
+  font-family: $font-family;
+}
+
+
+/*
+ * Lalala textarea style
+ */
+textarea {
+  @include box-sizing("border-box");
+  display: inline-block;
+  margin: 0;
+  border: 1px solid rgb(200,200,200);
+  padding: 0.8em;
+  @include border-radius(5px);
+  line-height: 1em;
+  color: gray(150);
+  background-color: white;
+  max-width: 100%;
+}
+
+// Focus state
+textarea:focus {
+  border-color: $yellow;
+  color: black;
+  @include box-shadow(transparentize($yellow,.2) 0 0 5px);
+  outline: none;
+}
+
+

@@ -1,0 +1,83 @@
+@import "compass";
+
+$yellow: rgba(255,204,100, 1);
+$gray:   rgba(240,240,240, 1);
+
+.wysihtml5-toolbar {
+  @include clearfix;
+  margin: 0 0 5px 0;
+}
+
+.wysihtml5-button {
+  float: left;
+  display: inline-block;
+  border: 1px solid #ccc;
+  @include border-radius(3px);
+  padding: 3px;
+  background-color: $gray;
+  cursor: pointer;
+  
+  &[data-wysihtml5-command="bold"]{
+    @extend .wysihtml5-icon;
+    background-image: url('/images/icons/text_bold.png');
+  }
+  
+  &[data-wysihtml5-command="italic"]{
+    @extend .wysihtml5-icon;
+    background-image: url('/images/icons/text_italic.png');
+  }
+  
+  &[data-wysihtml5-command="underline"]{
+    @extend .wysihtml5-icon;
+    background-image: url('/images/icons/text_underline.png');
+  }
+  
+  &[data-wysihtml5-command="insertOrderedList"]{
+    @extend .wysihtml5-icon;
+    background-image: url('/images/icons/text_list_numbers.png');
+  }
+  
+  &[data-wysihtml5-command="insertUnOrderedList"]{
+    @extend .wysihtml5-icon;
+    background-image: url('/images/icons/text_list_bullets.png');
+  }
+  
+  
+}
+
+.wysihtml5-button-group {
+  @include clearfix;
+  float: left;
+  margin: 0 5px 0 0;
+  
+  .wysihtml5-button {
+    @include border-radius(0);
+    border-left-width: 0px;
+    
+    &:first-child {
+      @include border-top-left-radius(3px);
+      @include border-bottom-left-radius(3px);
+      border-left-width: 1px;
+    }
+    
+    &:last-child {
+      @include border-top-right-radius(3px);
+      @include border-bottom-right-radius(3px);
+    }
+    
+  }
+  
+}
+
+.wysihtml5-command-active {
+  border-color: darken($gray, 30%);
+  background-color: darken($gray, 10%);
+}
+
+.wysihtml5-icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-indent: -3000px;
+  width: 20px;
+  height: 20px;
+}

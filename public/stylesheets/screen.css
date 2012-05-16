@@ -1,0 +1,56 @@
+/* line 6, ../../assets/stylesheets/screen.scss */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", "Arial", "sans-serif";
+  background-image: url("http://mrhenry.be/vendor/lalala/images/backgrounds/bg-pattern.jpg");
+}
+
+/* line 13, ../../assets/stylesheets/screen.scss */
+#wrapper {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+}
+
+/* line 20, ../../assets/stylesheets/screen.scss */
+textarea {
+  width: 500px;
+  height: 300px;
+  font-family: "Helvetica", "Arial", "sans-serif";
+}
+
+/*
+ * Lalala textarea style
+ */
+/* line 30, ../../assets/stylesheets/screen.scss */
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  border: 1px solid #c8c8c8;
+  padding: 0.8em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 1em;
+  color: gray(150);
+  background-color: white;
+  max-width: 100%;
+}
+
+/* line 44, ../../assets/stylesheets/screen.scss */
+textarea:focus {
+  border-color: #ffcc64;
+  color: black;
+  -webkit-box-shadow: rgba(255, 204, 100, 0.8) 0 0 5px;
+  -moz-box-shadow: rgba(255, 204, 100, 0.8) 0 0 5px;
+  box-shadow: rgba(255, 204, 100, 0.8) 0 0 5px;
+  outline: none;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="">
+
+  <title>WYSIWYG5 testcase</title>
+  
+  <link rel="stylesheet" href="/stylesheets/screen.css" media="screen">
+  <link rel="stylesheet" href="/stylesheets/skin.css" media="screen">
+  
+  
+  <script src="/javascripts/advanced.js"></script>
+  <script src="/javascripts/wysihtml5-0.3.0_rc2.js"></script>
+  <script src="http://www.google.com/jsapi?key="></script>
+  <script type="text/javascript">
+    google.load("jquery", "1");
+  </script>
+  <script>
+    $(function(){
+      
+      new wysihtml5.Editor("wysihtml5-textarea-1", { // id of textarea element
+        toolbar:      "wysihtml5-toolbar-1", // id of toolbar element
+        parserRules:  wysihtml5ParserRules // defined in parser rules set 
+      });
+      
+    });
+  </script>
+  
+</head>
+<body>
+  
+  <div id="wrapper">
+    <h1>Lalala wysiwyg5</h1>
+    <form>
+      <div id="wysihtml5-toolbar-1" style="display: none;" class="wysihtml5-toolbar">
+        <div class="wysihtml5-button-group">
+          <a class="wysihtml5-button" data-wysihtml5-command="bold">bold</a>
+          <a class="wysihtml5-button" data-wysihtml5-command="italic">italic</a>
+          <a class="wysihtml5-button" data-wysihtml5-command="underline">underline</a>
+        </div>
+        <div class="wysihtml5-button-group">
+          <a class="wysihtml5-button" data-wysihtml5-command="insertOrderedList">insert ordered list</a>
+          <a class="wysihtml5-button" data-wysihtml5-command="insertUnOrderedList">insert unordered list</a>
+        </div>
+      </div>
+      <textarea id="wysihtml5-textarea-1" placeholder="Enter your text ..."></textarea>
+    </form>
+  </div>
+
+</body>
+</html>
