@@ -22,39 +22,39 @@
 }
 /* line 21, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="bold"] {
-  background-image: url("/images/icons/text_bold.png");
+  background-image: url("../images/icons/text_bold.png");
 }
 /* line 26, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="italic"] {
-  background-image: url("/images/icons/text_italic.png");
+  background-image: url("../images/icons/text_italic.png");
 }
 /* line 31, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="underline"] {
-  background-image: url("/images/icons/text_underline.png");
+  background-image: url("../images/icons/text_underline.png");
 }
 /* line 36, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="insertOrderedList"] {
-  background-image: url("/images/icons/text_list_numbers.png");
+  background-image: url("../images/icons/text_list_numbers.png");
 }
 /* line 41, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="insertUnOrderedList"] {
-  background-image: url("/images/icons/text_list_bullets.png");
+  background-image: url("../images/icons/text_list_bullets.png");
 }
 /* line 46, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="indent"] {
-  background-image: url("/images/icons/text_indent.png");
+  background-image: url("../images/icons/text_indent.png");
 }
 /* line 51, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="outdent"] {
-  background-image: url("/images/icons/text_indent_remove.png");
+  background-image: url("../images/icons/text_indent_remove.png");
 }
 /* line 56, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="viewSource"] {
-  background-image: url("/images/icons/page_white_code.png");
+  background-image: url("../images/icons/page_white_code.png");
 }
 /* line 61, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command="insertImage"] {
-  background-image: url("/images/icons/image_add.png");
+  background-image: url("../images/icons/image_add.png");
 }
 
 /* line 69, ../../assets/stylesheets/skin.scss */
