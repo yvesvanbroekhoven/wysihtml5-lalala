@@ -20,47 +20,47 @@ $gray:   rgba(240,240,240, 1);
   
   &[data-wysihtml5-command="bold"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/text_bold.png');
+    background-image: url('../images/icons/text_bold.png');
   }
   
   &[data-wysihtml5-command="italic"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/text_italic.png');
+    background-image: url('../images/icons/text_italic.png');
   }
   
   &[data-wysihtml5-command="underline"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/text_underline.png');
+    background-image: url('../images/icons/text_underline.png');
   }
   
   &[data-wysihtml5-command="insertOrderedList"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/text_list_numbers.png');
+    background-image: url('../images/icons/text_list_numbers.png');
   }
   
   &[data-wysihtml5-command="insertUnOrderedList"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/text_list_bullets.png');
+    background-image: url('../images/icons/text_list_bullets.png');
   }
   
   &[data-wysihtml5-command="indent"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/text_indent.png');
+    background-image: url('../images/icons/text_indent.png');
   }
   
   &[data-wysihtml5-command="outdent"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/text_indent_remove.png');
+    background-image: url('../images/icons/text_indent_remove.png');
   }
   
   &[data-wysihtml5-command="viewSource"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/page_white_code.png');
+    background-image: url('../images/icons/page_white_code.png');
   }
   
   &[data-wysihtml5-command="insertImage"]{
     @extend .wysihtml5-icon;
-    background-image: url('/images/icons/image_add.png');
+    background-image: url('../images/icons/image_add.png');
   }
   
   
