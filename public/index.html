@@ -9,17 +9,21 @@
   <link rel="stylesheet" href="/stylesheets/screen.css" media="screen">
   <link rel="stylesheet" href="/stylesheets/skin.css" media="screen">
   
-  
-  <script src="/javascripts/advanced.js"></script>
-  <script src="/javascripts/wysihtml5-0.3.0_rc2.js"></script>
   <script src="http://www.google.com/jsapi?key="></script>
   <script type="text/javascript">
     google.load("jquery", "1");
   </script>
+  <script src="/javascripts/bootstrap-modal.js"></script>
+  
+  <script src="/javascripts/advanced.js"></script>
+  <script src="/javascripts/wysihtml5-0.3.0_rc2.js"></script>
+  <script src="/javascripts/wysihtml5-custom.js"></script>
+  
+  
   <script>
     $(function(){
       
-      new wysihtml5.Editor("wysihtml5-textarea-1", { // id of textarea element
+      window.wysihtml5Editor = new wysihtml5.Editor("wysihtml5-textarea-1", { // id of textarea element
         toolbar:      "wysihtml5-toolbar-1", // id of toolbar element
         parserRules:  wysihtml5ParserRules // defined in parser rules set 
       });
@@ -42,7 +46,25 @@
         <div class="wysihtml5-button-group">
           <a class="wysihtml5-button" data-wysihtml5-command="insertOrderedList">insert ordered list</a>
           <a class="wysihtml5-button" data-wysihtml5-command="insertUnOrderedList">insert unordered list</a>
+          <a class="wysihtml5-button" data-wysihtml5-command="outdent">outdent</a>
+          <a class="wysihtml5-button" data-wysihtml5-command="indent">indent</a>
         </div>
+        <a class="wysihtml5-button" data-wysihtml5-command="insertImage">insert image</a>
+        <a class="wysihtml5-button" data-wysihtml5-command="viewSource">view source</a>
+        
+        <div data-wysihtml5-dialog="insertImage" style="display: none;">
+          <img src="http://assets.demensen.be/files/289/thumb/flandriensavatar.jpg?1334660775" data-src="http://assets.demensen.be/files/289/small/flandriensavatar.jpg?1334660775" />
+          <img src="http://assets.demensen.be/files/289/thumb/flandriensavatar.jpg?1334660775" data-src="http://assets.demensen.be/files/289/small/flandriensavatar.jpg?1334660775" />
+          <img src="http://assets.demensen.be/files/289/thumb/flandriensavatar.jpg?1334660775" data-src="http://assets.demensen.be/files/289/small/flandriensavatar.jpg?1334660775" />
+          <img src="http://assets.demensen.be/files/289/thumb/flandriensavatar.jpg?1334660775" data-src="http://assets.demensen.be/files/289/small/flandriensavatar.jpg?1334660775" />
+          <img src="http://assets.demensen.be/files/289/thumb/flandriensavatar.jpg?1334660775" data-src="http://assets.demensen.be/files/289/small/flandriensavatar.jpg?1334660775" />
+          <div class="actions">
+            <input class="url" data-wysihtml5-dialog-field="src" value="">
+            <a data-wysihtml5-dialog-action="save" class="submit">OK</a>
+            <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+          </div>
+        </div>
+        
       </div>
       <textarea id="wysihtml5-textarea-1" placeholder="Enter your text ..."></textarea>
     </form>
