@@ -18,14 +18,20 @@
   <script src="javascripts/advanced.js"></script>
   <script src="javascripts/wysihtml5-0.3.0_rc2.js"></script>
   <script src="javascripts/wysihtml5-custom.js"></script>
+  <script src="javascripts/jquery-wysihtml5.js"></script>
   
   
   <script>
     $(function(){
       
-      window.wysihtml5Editor = new wysihtml5.Editor("wysihtml5-textarea-1", { // id of textarea element
-        toolbar:      "wysihtml5-toolbar-1", // id of toolbar element
-        parserRules:  wysihtml5ParserRules // defined in parser rules set 
+      //window.wysihtml5Editor = new wysihtml5.Editor("wysihtml5-textarea-1", { // id of textarea element
+      //  toolbar:      "wysihtml5-toolbar-1", // id of toolbar element
+      //  parserRules:  wysihtml5ParserRules // defined in parser rules set 
+      //});
+      
+      $('textarea').wysihtml5({
+        toolbar:      "wysihtml5-toolbar-minimal-",
+        parserRules:  wysihtml5ParserRules // defined in parser rules set
       });
       
     });
@@ -37,7 +43,7 @@
   <div id="wrapper">
     <h1>Lalala wysiwyg5</h1>
     <form>
-      <div id="wysihtml5-toolbar-1" style="display: none;" class="wysihtml5-toolbar">
+      <!--<div id="wysihtml5-toolbar-1" style="display: none;" class="wysihtml5-toolbar">
         <div class="wysihtml5-button-group">
           <a class="wysihtml5-button" data-wysihtml5-command="bold">bold</a>
           <a class="wysihtml5-button" data-wysihtml5-command="italic">italic</a>
@@ -65,7 +71,7 @@
           </div>
         </div>
         
-      </div>
+      </div>-->
       <textarea id="wysihtml5-textarea-1" placeholder="Enter your text ..."></textarea>
     </form>
   </div>
