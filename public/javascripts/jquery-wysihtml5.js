@@ -2,39 +2,60 @@
   
   var self = {};
   
+  var buttons = {
+    
+    'font-styles' : '<div class="wysihtml5-button-group"> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">paragraph</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">heading 2</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3">heading 3</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h4">heading 4</a> \
+                    </div>',
+                    
+    'emphasis'    : '<div class="wysihtml5-button-group"> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="bold">bold</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="italic">italic</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="underline">underline</a> \
+                    </div>',
+                
+    'lists'       : '<div class="wysihtml5-button-group"> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="insertOrderedList">insert ordered list</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="insertUnOrderedList">insert unordered list</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="outdent">outdent</a> \
+                      <a class="wysihtml5-button" data-wysihtml5-command="indent">indent</a> \
+                    </div>',
+                    
+    'tables'      : '<a class="wysihtml5-button" data-wysihtml5-command="insertHTML" data-wysihtml5-command-value="<table border=\'1\' contenteditable><thead><tr><th>Thead1</th><th>Thead2</th><th>Thead3</th></tr></thead><tfoot><tr><td>Tfoot1</td><td>Tfoot2</td><td>Tfoot3</td></tr></tfoot><tbody><tr><td>Row1 Col1</td><td>Row1 Col2</td><td>Row1 Col3</td></tr><tr><td>Row2 Col1</td><td>Row2 Col2</td><td>Row3 Col3</td></tr></tbody></table>">insert table</a>',
+    
+    
+  };
+  
+  var toolbars = {
+    
+    'minimal' : buttons['emphasis'],
+    'basic'   : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'],
+    'full'    : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'] + buttons['tables']
+    
+  };
+  
+  
   /*
-   * Create toolbar
-   * Gets html page named as options.toolbar
+   * Create toolbar by predefined toolbars
    * this     = <textarea>
    * options  = wysihtml5 options
    */
   self.createToolbar = function(options){
-    var dfd     = $.Deferred()
-    ,   $this   = $(this)
-    ,   toolbar = options.toolbar
-    ,   xhr
+    var $toolbar  = $('<div class="wysihtml5-toolbar"></div>')
+    ,   $this     = $(this)
     ;
     
-    xhr = $.get(toolbar + '.html', function(data){
-      $toolbar = $(data);
-      
-      // Add unique ID
-      $toolbar.attr('id', $toolbar.attr('id') + $('.wysihtml5-toolbar').length);
-      
-      // Pass new id for our wysihtml5 constructor
-      options.toolbar = $toolbar.attr('id');
-      
-      // Insert toolbar before textarea
-      $toolbar.insertBefore($this);
-      
-      dfd.resolve(options);
-    });
+    $toolbar
+      .append(toolbars[options.toolbar])
+      .attr('id', $this.attr('id') + '-toolbar')
+      .insertBefore($this);
     
-    xhr.fail(function(){
-      console.warn("wysihtml5 toolbar file not found.");
-    });
+    options.toolbar = $toolbar.attr('id');
     
-    return dfd.promise();
+    return options;
   };
   
   
