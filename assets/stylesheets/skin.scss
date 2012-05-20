@@ -98,6 +98,11 @@ $gray:   rgba(240,240,240, 1);
     background-image: url('../images/icons/image_add.png');
   }
   
+  &[data-wysihtml5-command="insertLink"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/link_add.png');
+  }
+  
   &[data-wysihtml5-command-value^="<table"]{
     @extend .wysihtml5-icon;
     background-image: url('../images/icons/table_add.png');
@@ -150,6 +155,24 @@ $gray:   rgba(240,240,240, 1);
   text-decoration: underline;
 }
 
+.wysihtml5-modal {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin: 0 0 0 -200px;
+  border: 1px solid $gray;
+  padding: 50px;
+  width: 300px;
+  background-color: white;
+  
+  a {
+    cursor: pointer;
+  }
+  
+}
+
+/* experimental **/
 div[data-wysihtml5-dialog="insertImage"] {
   position: fixed;
   top: 50px;

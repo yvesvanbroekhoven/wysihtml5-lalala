@@ -26,6 +26,18 @@
                     
     'tables'      : '<a class="wysihtml5-button" data-wysihtml5-command="insertHTML" data-wysihtml5-command-value="<table border=\'1\'><thead><th>TH</th></thead><tbody><td>TD</td></tbody></table>">insert table</a>',
     
+    'link'        : '<a class="wysihtml5-button" data-wysihtml5-command="insertLink">create link</a> \
+                     <div class="wysihtml5-modal wysihtml5-insert-link-modal"> \
+                       <div class="wysihtml5-modal-header"> \
+                       </div> \
+                       <div class="wysihtml5-modal-body"> \
+                         <input type="text" id="wysihtml5-modal-url" data-initial-value="http://" /> \
+                       </div> \
+                       <div class="wysihtml5-modal-footer"> \
+                         <a class="wysihtml5-modal-cancel">Cancel</a> \
+                         <a class="wysihtml5-modal-confirm">Insert link</a> \
+                       </div> \
+                     </div>',
     
   };
   
@@ -33,7 +45,7 @@
     
     'minimal' : buttons['emphasis'],
     'basic'   : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'],
-    'full'    : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'] + buttons['tables']
+    'full'    : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'] + buttons['link'] + buttons['tables']
     
   };
   
@@ -60,17 +72,55 @@
   
   
   /*
+   * this     = <textarea>
+   * options  = wysihtml5 options
+   */
+  self.initInsertLink = function(options){
+    var $this        = $(this)
+    ,   $insert_link = $('#' + options.toolbar).find('a[data-wysihtml5-command="insertLink"]')
+    ,   $modal       = $insert_link.siblings('.wysihtml5-insert-link-modal')
+    ,   $insert_btn  = $modal.find('.wysihtml5-modal-confirm')
+    ,   $cancel_btn  = $modal.find('.wysihtml5-modal-cancel')
+    ,   $url_field   = $modal.find('#wysihtml5-modal-url')
+    ;
+    
+    $insert_link.bind('click', function(){
+      $url_field.val($url_field.data('initial-value'));
+      $modal.show();
+      $url_field.focus();
+    });
+    
+    $insert_btn.bind('click', function(){
+      $modal.hide();
+      $this.data('wysihtml5').composer.commands.exec('createLink', {
+        href: $url_field.val(),
+        target: '',
+        rel: ''
+      });
+    });
+    
+    $cancel_btn.bind('click', function(){
+      $modal.hide();
+      $this.data('wysihtml5').currentView.element.focus();
+    });
+    
+  };
+  
+  
+  /*
    * jQuery function for wysihtml5 editor
    * options = wysihtml5 options
    */
   $.fn.wysihtml5 = function(options){
     
     this.each(function(){
-      var $this = $(this);
+      var _this = this
+      ,   $this = $(_this);
       
       $.when(self.createToolbar.call(this, options))
        .then(function(options){
          $this.data('wysihtml5', new wysihtml5.Editor($this.attr('id'), options));
+         self.initInsertLink.call(_this, options);
        });
       
       //var onLoad = function(){
