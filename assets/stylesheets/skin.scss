@@ -18,6 +18,41 @@ $gray:   rgba(240,240,240, 1);
   background-color: $gray;
   cursor: pointer;
   
+  &[data-wysihtml5-command-value="p"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/text_paragraph.png');
+  }
+  
+  &[data-wysihtml5-command-value="h1"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/text_heading_1.png');
+  }
+  
+  &[data-wysihtml5-command-value="h2"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/text_heading_2.png');
+  }
+  
+  &[data-wysihtml5-command-value="h3"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/text_heading_3.png');
+  }
+  
+  &[data-wysihtml5-command-value="h4"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/text_heading_4.png');
+  }
+  
+  &[data-wysihtml5-command-value="h5"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/text_heading_5.png');
+  }
+  
+  &[data-wysihtml5-command-value="h6"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/text_heading_6.png');
+  }
+  
   &[data-wysihtml5-command="bold"]{
     @extend .wysihtml5-icon;
     background-image: url('../images/icons/text_bold.png');
@@ -63,6 +98,10 @@ $gray:   rgba(240,240,240, 1);
     background-image: url('../images/icons/image_add.png');
   }
   
+  &[data-wysihtml5-command-value^="<table"]{
+    @extend .wysihtml5-icon;
+    background-image: url('../images/icons/table_add.png');
+  }
   
 }
 

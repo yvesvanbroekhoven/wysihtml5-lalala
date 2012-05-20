@@ -29,17 +29,29 @@
       //  parserRules:  wysihtml5ParserRules // defined in parser rules set 
       //});
       
-      $('textarea').wysihtml5({
-        toolbar:      "wysihtml5-toolbar-minimal",
+      $('textarea[data-toolbar="minimal"]').wysihtml5({
+        toolbar:      "minimal",
+        parserRules:  wysihtml5ParserRules, // defined in parser rules set
+        
+      });
+      
+      $('textarea[data-toolbar="basic"]').wysihtml5({
+        toolbar:      "basic",
         parserRules:  wysihtml5ParserRules // defined in parser rules set
       });
       
+      $('textarea[data-toolbar="full"]').wysihtml5({
+        toolbar:      "full",
+        parserRules:  wysihtml5ParserRules, // defined in parser rules set
+      });
+    
+      
     });
+
   </script>
   
 </head>
 <body>
-  
   <div id="wrapper">
     <h1>Lalala wysiwyg5</h1>
     <form>
@@ -72,7 +84,13 @@
         </div>
         
       </div>-->
-      <textarea id="wysihtml5-textarea-1" placeholder="Enter your text ..."></textarea>
+      <textarea id="wysihtml5-textarea-1" placeholder="This is a textarea with a minimal toolbar" data-toolbar="minimal"></textarea>
+      <br>
+      <br>
+      <textarea id="wysihtml5-textarea-2" placeholder="This is a textarea with a basic toolbar" data-toolbar="basic"></textarea>
+      <br>
+      <br>
+      <textarea id="wysihtml5-textarea-3" placeholder="This is a textarea with a full option toolbar" data-toolbar="full"></textarea>
     </form>
   </div>
 
