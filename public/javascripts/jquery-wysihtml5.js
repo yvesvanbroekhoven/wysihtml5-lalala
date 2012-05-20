@@ -24,7 +24,7 @@
                       <a class="wysihtml5-button" data-wysihtml5-command="indent">indent</a> \
                     </div>',
                     
-    'tables'      : '<a class="wysihtml5-button" data-wysihtml5-command="insertHTML" data-wysihtml5-command-value="<table border=\'1\' contenteditable><thead><tr><th>Thead1</th><th>Thead2</th><th>Thead3</th></tr></thead><tfoot><tr><td>Tfoot1</td><td>Tfoot2</td><td>Tfoot3</td></tr></tfoot><tbody><tr><td>Row1 Col1</td><td>Row1 Col2</td><td>Row1 Col3</td></tr><tr><td>Row2 Col1</td><td>Row2 Col2</td><td>Row3 Col3</td></tr></tbody></table>">insert table</a>',
+    'tables'      : '<a class="wysihtml5-button" data-wysihtml5-command="insertHTML" data-wysihtml5-command-value="<table border=\'1\'><thead><th>TH</th></thead><tbody><td>TD</td></tbody></table>">insert table</a>',
     
     
   };
