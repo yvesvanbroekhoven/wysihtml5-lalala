@@ -85,18 +85,22 @@
   background-image: url("../images/icons/image_add.png");
 }
 /* line 101, ../../assets/stylesheets/skin.scss */
+.wysihtml5-button[data-wysihtml5-command="insertLink"] {
+  background-image: url("../images/icons/link_add.png");
+}
+/* line 106, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button[data-wysihtml5-command-value^="<table"] {
   background-image: url("../images/icons/table_add.png");
 }
 
-/* line 108, ../../assets/stylesheets/skin.scss */
+/* line 113, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button-group {
   overflow: hidden;
   *zoom: 1;
   float: left;
   margin: 0 5px 0 0;
 }
-/* line 113, ../../assets/stylesheets/skin.scss */
+/* line 118, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button-group .wysihtml5-button {
   margin: 0;
   -webkit-border-radius: 0;
@@ -106,7 +110,7 @@
   border-radius: 0;
   border-left-width: 0px;
 }
-/* line 118, ../../assets/stylesheets/skin.scss */
+/* line 123, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button-group .wysihtml5-button:first-child {
   margin-left: 0 !important;
   -moz-border-radius-topleft: 3px;
@@ -121,7 +125,7 @@
   border-bottom-left-radius: 3px;
   border-left-width: 1px;
 }
-/* line 125, ../../assets/stylesheets/skin.scss */
+/* line 130, ../../assets/stylesheets/skin.scss */
 .wysihtml5-button-group .wysihtml5-button:last-child {
   -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
@@ -135,7 +139,7 @@
   border-bottom-right-radius: 3px;
 }
 
-/* line 134, ../../assets/stylesheets/skin.scss */
+/* line 139, ../../assets/stylesheets/skin.scss */
 .wysihtml5-command-active {
   margin-left: -1px;
   border-color: #a3a3a3;
@@ -143,8 +147,8 @@
   background-color: #d6d6d6;
 }
 
-/* line 141, ../../assets/stylesheets/skin.scss */
-.wysihtml5-icon, .wysihtml5-button[data-wysihtml5-command-value="p"], .wysihtml5-button[data-wysihtml5-command-value="h1"], .wysihtml5-button[data-wysihtml5-command-value="h2"], .wysihtml5-button[data-wysihtml5-command-value="h3"], .wysihtml5-button[data-wysihtml5-command-value="h4"], .wysihtml5-button[data-wysihtml5-command-value="h5"], .wysihtml5-button[data-wysihtml5-command-value="h6"], .wysihtml5-button[data-wysihtml5-command="bold"], .wysihtml5-button[data-wysihtml5-command="italic"], .wysihtml5-button[data-wysihtml5-command="underline"], .wysihtml5-button[data-wysihtml5-command="insertOrderedList"], .wysihtml5-button[data-wysihtml5-command="insertUnOrderedList"], .wysihtml5-button[data-wysihtml5-command="indent"], .wysihtml5-button[data-wysihtml5-command="outdent"], .wysihtml5-button[data-wysihtml5-command="viewSource"], .wysihtml5-button[data-wysihtml5-command="insertImage"], .wysihtml5-button[data-wysihtml5-command-value^="<table"] {
+/* line 146, ../../assets/stylesheets/skin.scss */
+.wysihtml5-icon, .wysihtml5-button[data-wysihtml5-command-value="p"], .wysihtml5-button[data-wysihtml5-command-value="h1"], .wysihtml5-button[data-wysihtml5-command-value="h2"], .wysihtml5-button[data-wysihtml5-command-value="h3"], .wysihtml5-button[data-wysihtml5-command-value="h4"], .wysihtml5-button[data-wysihtml5-command-value="h5"], .wysihtml5-button[data-wysihtml5-command-value="h6"], .wysihtml5-button[data-wysihtml5-command="bold"], .wysihtml5-button[data-wysihtml5-command="italic"], .wysihtml5-button[data-wysihtml5-command="underline"], .wysihtml5-button[data-wysihtml5-command="insertOrderedList"], .wysihtml5-button[data-wysihtml5-command="insertUnOrderedList"], .wysihtml5-button[data-wysihtml5-command="indent"], .wysihtml5-button[data-wysihtml5-command="outdent"], .wysihtml5-button[data-wysihtml5-command="viewSource"], .wysihtml5-button[data-wysihtml5-command="insertImage"], .wysihtml5-button[data-wysihtml5-command="insertLink"], .wysihtml5-button[data-wysihtml5-command-value^="<table"] {
   background-position: center center;
   background-repeat: no-repeat;
   text-indent: -3000px;
@@ -152,12 +156,30 @@
   height: 20px;
 }
 
-/* line 149, ../../assets/stylesheets/skin.scss */
+/* line 154, ../../assets/stylesheets/skin.scss */
 .wysiwyg-text-decoration-underline {
   text-decoration: underline;
 }
 
-/* line 153, ../../assets/stylesheets/skin.scss */
+/* line 158, ../../assets/stylesheets/skin.scss */
+.wysihtml5-modal {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin: 0 0 0 -200px;
+  border: 1px solid #f0f0f0;
+  padding: 50px;
+  width: 300px;
+  background-color: white;
+}
+/* line 169, ../../assets/stylesheets/skin.scss */
+.wysihtml5-modal a {
+  cursor: pointer;
+}
+
+/* experimental **/
+/* line 176, ../../assets/stylesheets/skin.scss */
 div[data-wysihtml5-dialog="insertImage"] {
   position: fixed;
   top: 50px;
@@ -176,11 +198,11 @@ div[data-wysihtml5-dialog="insertImage"] {
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0 0 5px;
   box-shadow: rgba(0, 0, 0, 0.9) 0 0 5px;
 }
-/* line 165, ../../assets/stylesheets/skin.scss */
+/* line 188, ../../assets/stylesheets/skin.scss */
 div[data-wysihtml5-dialog="insertImage"] .image {
   float: left;
 }
-/* line 168, ../../assets/stylesheets/skin.scss */
+/* line 191, ../../assets/stylesheets/skin.scss */
 div[data-wysihtml5-dialog="insertImage"] .image input {
   display: none;
 }
