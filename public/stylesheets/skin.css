@@ -81,7 +81,7 @@
   background-image: url("../images/icons/page_white_code.png");
 }
 /* line 96, ../../assets/stylesheets/skin.scss */
-.wysihtml5-button[data-wysihtml5-command="insertImage"] {
+.wysihtml5-button[data-wysihtml5-command="addImage"] {
   background-image: url("../images/icons/image_add.png");
 }
 /* line 101, ../../assets/stylesheets/skin.scss */
@@ -148,7 +148,7 @@
 }
 
 /* line 146, ../../assets/stylesheets/skin.scss */
-.wysihtml5-icon, .wysihtml5-button[data-wysihtml5-command-value="p"], .wysihtml5-button[data-wysihtml5-command-value="h1"], .wysihtml5-button[data-wysihtml5-command-value="h2"], .wysihtml5-button[data-wysihtml5-command-value="h3"], .wysihtml5-button[data-wysihtml5-command-value="h4"], .wysihtml5-button[data-wysihtml5-command-value="h5"], .wysihtml5-button[data-wysihtml5-command-value="h6"], .wysihtml5-button[data-wysihtml5-command="bold"], .wysihtml5-button[data-wysihtml5-command="italic"], .wysihtml5-button[data-wysihtml5-command="underline"], .wysihtml5-button[data-wysihtml5-command="insertOrderedList"], .wysihtml5-button[data-wysihtml5-command="insertUnOrderedList"], .wysihtml5-button[data-wysihtml5-command="indent"], .wysihtml5-button[data-wysihtml5-command="outdent"], .wysihtml5-button[data-wysihtml5-command="viewSource"], .wysihtml5-button[data-wysihtml5-command="insertImage"], .wysihtml5-button[data-wysihtml5-command="insertLink"], .wysihtml5-button[data-wysihtml5-command-value^="<table"] {
+.wysihtml5-icon, .wysihtml5-button[data-wysihtml5-command-value="p"], .wysihtml5-button[data-wysihtml5-command-value="h1"], .wysihtml5-button[data-wysihtml5-command-value="h2"], .wysihtml5-button[data-wysihtml5-command-value="h3"], .wysihtml5-button[data-wysihtml5-command-value="h4"], .wysihtml5-button[data-wysihtml5-command-value="h5"], .wysihtml5-button[data-wysihtml5-command-value="h6"], .wysihtml5-button[data-wysihtml5-command="bold"], .wysihtml5-button[data-wysihtml5-command="italic"], .wysihtml5-button[data-wysihtml5-command="underline"], .wysihtml5-button[data-wysihtml5-command="insertOrderedList"], .wysihtml5-button[data-wysihtml5-command="insertUnOrderedList"], .wysihtml5-button[data-wysihtml5-command="indent"], .wysihtml5-button[data-wysihtml5-command="outdent"], .wysihtml5-button[data-wysihtml5-command="viewSource"], .wysihtml5-button[data-wysihtml5-command="addImage"], .wysihtml5-button[data-wysihtml5-command="insertLink"], .wysihtml5-button[data-wysihtml5-command-value^="<table"] {
   background-position: center center;
   background-repeat: no-repeat;
   text-indent: -3000px;
@@ -170,16 +170,19 @@
   margin: 0 0 0 -200px;
   border: 1px solid #f0f0f0;
   padding: 50px;
+  min-width: 300px;
+  width: auto !important;
   width: 300px;
+  max-width: 700px;
   background-color: white;
 }
-/* line 169, ../../assets/stylesheets/skin.scss */
+/* line 170, ../../assets/stylesheets/skin.scss */
 .wysihtml5-modal a {
   cursor: pointer;
 }
 
 /* experimental **/
-/* line 176, ../../assets/stylesheets/skin.scss */
+/* line 177, ../../assets/stylesheets/skin.scss */
 div[data-wysihtml5-dialog="insertImage"] {
   position: fixed;
   top: 50px;
@@ -198,11 +201,11 @@ div[data-wysihtml5-dialog="insertImage"] {
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0 0 5px;
   box-shadow: rgba(0, 0, 0, 0.9) 0 0 5px;
 }
-/* line 188, ../../assets/stylesheets/skin.scss */
+/* line 189, ../../assets/stylesheets/skin.scss */
 div[data-wysihtml5-dialog="insertImage"] .image {
   float: left;
 }
-/* line 191, ../../assets/stylesheets/skin.scss */
+/* line 192, ../../assets/stylesheets/skin.scss */
 div[data-wysihtml5-dialog="insertImage"] .image input {
   display: none;
 }

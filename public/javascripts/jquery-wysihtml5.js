@@ -29,6 +29,7 @@
     'link'        : '<a class="wysihtml5-button" data-wysihtml5-command="insertLink">create link</a> \
                      <div class="wysihtml5-modal wysihtml5-insert-link-modal"> \
                        <div class="wysihtml5-modal-header"> \
+                        Insert link \
                        </div> \
                        <div class="wysihtml5-modal-body"> \
                          <input type="text" id="wysihtml5-modal-url" data-initial-value="http://" /> \
@@ -38,6 +39,17 @@
                          <a class="wysihtml5-modal-confirm">Insert link</a> \
                        </div> \
                      </div>',
+                    
+   'image'        : '<a class="wysihtml5-button" data-wysihtml5-command="addImage">insert image</a> \
+                     <div class="wysihtml5-modal wysihtml5-add-image-modal"> \
+                       <div class="wysihtml5-modal-header"> \
+                        Insert image \
+                       </div> \
+                       <div class="wysihtml5-modal-body"></div> \
+                       <div class="wysihtml5-modal-footer"> \
+                         <a class="wysihtml5-modal-cancel">Cancel</a> \
+                       </div> \
+                     </div>',
     
   };
   
@@ -45,7 +57,7 @@
     
     'minimal' : buttons['emphasis'],
     'basic'   : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'],
-    'full'    : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'] + buttons['link'] + buttons['tables']
+    'full'    : buttons['font-styles'] + buttons['emphasis'] + buttons['lists'] + buttons['link'] + buttons['image'] + buttons['tables']
     
   };
   
@@ -107,6 +119,48 @@
   };
   
   
+  self.initInsertImage = function(options){
+    var $this         = $(this)
+    ,   $insert_image = $('#' + options.toolbar).find('a[data-wysihtml5-command="addImage"]')
+    ,   $modal        = $insert_image.siblings('.wysihtml5-add-image-modal')
+    ,   $modal_body   = $modal.find('.wysihtml5-modal-body')
+    ,   $cancel_btn   = $modal.find('.wysihtml5-modal-cancel')
+    ,   images_url    = 'images.html' // Needs improvement
+    ;
+    
+    $.when($.get(images_url))
+     .then(function(data){
+       $modal_body.append(data);
+       
+       $modal.find('img').bind('click', function(){
+         $modal.hide();
+         $this.data('wysihtml5').composer.commands.exec("insertImage", { src: $(this).data('src'), alt: '' });
+       });
+     });
+     
+    $insert_image.bind('click', function(){
+      $modal.show();
+    });
+    
+    
+
+    //$insert_btn.bind('click', function(){
+    //  $modal.hide();
+    //  $this.data('wysihtml5').composer.commands.exec('createLink', {
+    //    href: $url_field.val(),
+    //    target: '',
+    //    rel: ''
+    //  });
+    //});
+
+    $cancel_btn.bind('click', function(){
+      $modal.hide();
+      $this.data('wysihtml5').currentView.element.focus();
+    });
+    
+  };
+  
+  
   /*
    * jQuery function for wysihtml5 editor
    * options = wysihtml5 options
@@ -121,6 +175,7 @@
        .then(function(options){
          $this.data('wysihtml5', new wysihtml5.Editor($this.attr('id'), options));
          self.initInsertLink.call(_this, options);
+         self.initInsertImage.call(_this, options);
        });
       
       //var onLoad = function(){
