@@ -32,7 +32,14 @@
                         Insert link \
                        </div> \
                        <div class="wysihtml5-modal-body"> \
-                         <input type="text" id="wysihtml5-modal-url" data-initial-value="http://" /> \
+                         <div> \
+                            <label for="wysihtml5-modal-link-text">Text to display:</label> \
+                            <input type="text" id="wysihtml5-modal-link-text" data-initial-value="" /> \
+                          </div> \
+                         <div> \
+                           <label for="wysihtml5-modal-url">Link to:</label> \
+                           <input type="url" id="wysihtml5-modal-url" data-initial-value="http://" /> \
+                         </div> \
                        </div> \
                        <div class="wysihtml5-modal-footer"> \
                          <a class="wysihtml5-modal-cancel">Cancel</a> \
@@ -125,7 +132,7 @@
     ,   $modal        = $insert_image.siblings('.wysihtml5-add-image-modal')
     ,   $modal_body   = $modal.find('.wysihtml5-modal-body')
     ,   $cancel_btn   = $modal.find('.wysihtml5-modal-cancel')
-    ,   images_url    = 'images.html' // Needs improvement
+    ,   images_url    = 'images.html' // Needs to be an option
     ;
     
     $.when($.get(images_url))
